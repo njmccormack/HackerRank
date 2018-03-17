@@ -1,0 +1,13 @@
+//Tried this with array od day names and indexing on day number - problems with some dates.
+//finished up with direct access to date and conversion (no array lookup)
+import java.util.*;
+
+public class Solution {
+    public static String getDay(String day, String month, String year) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Integer.valueOf(year), (Integer.valueOf(month) - 1), Integer.valueOf(day));// month in Java starts w 0
+       
+        //return string format DayOfWeek;
+        return calendar.getDisplayName(Calendar.DAY_OF_WEEK,Calendar.LONG, Locale.getDefault()).toUpperCase();
+        
+    }
